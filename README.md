@@ -76,6 +76,7 @@ CodeForge AI combines **AI-assisted development, real-time collaboration, projec
 
 ## 🏗️ System Architecture
 
+```mermaid
 flowchart TB
     User["👤 USER - Web Browser"]
     Frontend["🎨 FRONTEND - React + Vite"]
