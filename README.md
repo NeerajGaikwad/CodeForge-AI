@@ -74,7 +74,7 @@ CodeForge AI combines **AI-assisted development, real-time collaboration, projec
 
 ---
 
-# 🏗️ System Architecture
+## 🏗️ System Architecture
 
 ```text
                          ┌──────────────────────────┐
@@ -134,7 +134,9 @@ CodeForge AI combines **AI-assisted development, real-time collaboration, projec
                            └────────────────┘
 ```
 
-# 🔄 Application Flow
+---
+
+## 🔄 Application Flow
 
 ```mermaid
 flowchart TD
@@ -172,7 +174,7 @@ flowchart TD
     P --> S[Project Chat]
     P --> T[Terminal]
 
-    S --> U{@ai Prompt}
+    S --> U{"@ai Prompt"}
     U --> V[Backend AI Service]
     V --> W[Google Gemini]
     W --> X[Generated Code / Files]
@@ -195,9 +197,11 @@ flowchart TD
     AH --> Z
 ```
 
-# 🛠️ Tech Stack
+---
 
-## 🎨 Frontend
+## 🛠️ Tech Stack
+
+### 🎨 Frontend
 
 | Technology | Purpose |
 |---|---|
@@ -211,7 +215,7 @@ flowchart TD
 | highlight.js | Code syntax highlighting |
 | markdown-to-jsx | Rendering AI-generated Markdown |
 
-## ⚙️ Backend
+### ⚙️ Backend
 
 | Technology | Purpose |
 |---|---|
@@ -226,7 +230,7 @@ flowchart TD
 | express-validator | Request validation |
 | Passport.js | Google OAuth authentication |
 
-## 🤖 AI & External Services
+### 🤖 AI & External Services
 
 | Technology / Service | Purpose |
 |---|---|
@@ -236,7 +240,7 @@ flowchart TD
 | MongoDB Atlas | Cloud database |
 | Redis Cloud | Cloud Redis |
 
-## 🧰 Development Tools
+### 🧰 Development Tools
 
 | Tool | Purpose |
 |---|---|
@@ -245,9 +249,11 @@ flowchart TD
 | VS Code | Development environment |
 | npm | Package management |
 
-# 🔐 Environment Variables
+---
 
-## Backend
+## 🔐 Environment Variables
+
+### Backend
 
 Create `backend/.env`:
 
@@ -277,7 +283,17 @@ CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 ```
 
-# 📁 Project Structure
+### Frontend
+
+Create `frontend/.env`:
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+---
+
+## 📁 Project Structure
 
 ```text
 CodeForge-AI/
@@ -336,16 +352,18 @@ CodeForge-AI/
 └── 📄 LICENSE
 ```
 
-# 🚀 Setup & Run
+---
 
-## 1. Clone the Repository
+## 🚀 Setup & Run
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/NeerajGaikwad/CodeForge-AI.git
 cd CodeForge-AI
 ```
 
-## 2. Backend Setup
+### 2. Backend Setup
 
 ```bash
 cd backend
@@ -362,7 +380,7 @@ node server.js
 
 Backend: http://localhost:3000
 
-## 3. Frontend Setup
+### 3. Frontend Setup
 
 Open a new terminal:
 
@@ -385,9 +403,9 @@ npm run dev
 
 Frontend: http://localhost:5173
 
-## 4. Run the Complete Application
+### 4. Run the Complete Application
 
-### Terminal 1 — Backend
+#### Terminal 1 — Backend
 
 ```bash
 cd CodeForge-AI/backend
@@ -395,7 +413,7 @@ npm install
 node server.js
 ```
 
-### Terminal 2 — Frontend
+#### Terminal 2 — Frontend
 
 ```bash
 cd CodeForge-AI/frontend
@@ -404,6 +422,8 @@ npm run dev
 ```
 
 Open the application: http://localhost:5173
+
+---
 
 ## 🔗 Services
 
