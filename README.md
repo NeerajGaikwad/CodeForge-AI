@@ -76,65 +76,32 @@ CodeForge AI combines **AI-assisted development, real-time collaboration, projec
 
 ## 🏗️ System Architecture
 
-```text
-                         ┌──────────────────────────┐
-                         │          USER            │
-                         │     Web Browser          │
-                         └────────────┬─────────────┘
-                                      │
-                                      │ HTTP / WebSocket
-                                      ▼
-                    ┌──────────────────────────────────┐
-                    │            FRONTEND              │
-                    │                                  │
-                    │        React + Vite              │
-                    │                                  │
-                    │  ┌──────────┐  ┌─────────────┐  │
-                    │  │   Chat   │  │ File Editor │  │
-                    │  └──────────┘  └─────────────┘  │
-                    │                                  │
-                    │  ┌──────────┐  ┌─────────────┐  │
-                    │  │ Projects │  │ WebContainer │  │
-                    │  └──────────┘  └─────────────┘  │
-                    └───────────────┬──────────────────┘
-                                    │
-                         REST API / Socket.IO
-                                    │
-                                    ▼
-                    ┌──────────────────────────────────┐
-                    │             BACKEND              │
-                    │                                  │
-                    │        Node.js + Express         │
-                    │                                  │
-                    │ ┌────────────┐ ┌──────────────┐ │
-                    │ │   Routes   │ │ Controllers  │ │
-                    │ └────────────┘ └──────────────┘ │
-                    │                                  │
-                    │ ┌────────────┐ ┌──────────────┐ │
-                    │ │ Middleware │ │   Services   │ │
-                    │ └────────────┘ └──────────────┘ │
-                    └───────────────┬──────────────────┘
-                                    │
-              ┌─────────────────────┼─────────────────────┐
-              │                     │                     │
-              ▼                     ▼                     ▼
-     ┌────────────────┐    ┌────────────────┐    ┌────────────────┐
-     │    MongoDB     │    │     Redis      │    │  Google Gemini │
-     │                │    │                │    │       AI       │
-     │ Users          │    │ OTP Storage    │    │                │
-     │ Projects       │    │ Token          │    │ AI Responses   │
-     │ Messages       │    │ Blacklisting   │    │ Code Generation│
-     └────────────────┘    └────────────────┘    └────────────────┘
-                                    │
-                                    ▼
-                           ┌────────────────┐
-                           │     Resend     │
-                           │                │
-                           │ OTP / Email    │
-                           └────────────────┘
-```
+flowchart TB
+    User["👤 USER<br/>Web Browser"]
+    Frontend["🎨 FRONTEND<br/>React + Vite"]
+    Backend["⚙️ BACKEND<br/>Node.js + Express"]
 
----
+    MongoDB[("🗄️ MongoDB<br/>Users · Projects · Messages")]
+    Redis[("⚡ Redis<br/>OTP Storage · Token Blacklisting")]
+    Gemini["🤖 Google Gemini AI<br/>AI Responses · Code Generation"]
+    Resend["📧 Resend<br/>OTP / Email Delivery"]
+
+    User -->|HTTP / WebSocket| Frontend
+    Frontend -->|REST API / Socket.IO| Backend
+
+    Backend --> MongoDB
+    Backend --> Redis
+    Backend --> Gemini
+    Backend --> Resend
+
+    subgraph FE["Frontend Modules"]
+        Chat["💬 Chat"]
+        Editor["📝 File Editor"]
+        Projects["📁 Projects"]
+        WebContainer["💻 WebContainer"]
+    end
+
+    Frontend --- FE
 
 ## 🔄 Application Flow
 
