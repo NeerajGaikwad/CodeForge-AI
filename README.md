@@ -123,7 +123,7 @@ CodeForge AI combines **AI-assisted development, real-time collaboration, projec
      │                │    │                │    │       AI       │
      │ Users          │    │ OTP Storage    │    │                │
      │ Projects       │    │ Token          │    │ AI Responses   │
-     │ Messages       │    │ Blacklisting    │    │ Code Generation│
+     │ Messages       │    │ Blacklisting   │    │ Code Generation│
      └────────────────┘    └────────────────┘    └────────────────┘
                                     │
                                     ▼
@@ -334,70 +334,83 @@ CodeForge-AI/
 ├── 📄 .gitignore
 ├── 📄 README.md
 └── 📄 LICENSE
+```
 
 # 🚀 Setup & Run
 
 ## 1. Clone the Repository
 
+```bash
 git clone https://github.com/NeerajGaikwad/CodeForge-AI.git
 cd CodeForge-AI
+```
 
 ## 2. Backend Setup
 
+```bash
 cd backend
 npm install
+```
 
-Create backend/.env and add the required environment variables.
+Create `backend/.env` and add the required environment variables.
 
 Start the backend:
 
+```bash
 node server.js
+```
 
-Backend:
-http://localhost:3000
+Backend: http://localhost:3000
 
 ## 3. Frontend Setup
 
 Open a new terminal:
 
+```bash
 cd CodeForge-AI/frontend
 npm install
+```
 
-Create frontend/.env:
+Create `frontend/.env`:
 
+```env
 VITE_API_URL=http://localhost:3000
+```
 
 Start the frontend:
 
+```bash
 npm run dev
+```
 
-Frontend:
-http://localhost:5173
+Frontend: http://localhost:5173
 
 ## 4. Run the Complete Application
 
 ### Terminal 1 — Backend
 
+```bash
 cd CodeForge-AI/backend
 npm install
 node server.js
+```
 
 ### Terminal 2 — Frontend
 
+```bash
 cd CodeForge-AI/frontend
 npm install
 npm run dev
+```
 
-Open the application:
-
-http://localhost:5173
+Open the application: http://localhost:5173
 
 ## 🔗 Services
 
-Frontend: http://localhost:5173
-Backend API: http://localhost:3000
-MongoDB: MongoDB Atlas
-Redis: Redis Cloud
-AI: Google Gemini API
-Email: Resend
-Image Storage: Cloudinary
+- **Frontend:** http://localhost:5173
+- **Backend API:** http://localhost:3000
+- **MongoDB:** MongoDB Atlas
+- **Redis:** Redis Cloud
+- **AI:** Google Gemini API
+- **Email:** Resend
+- **Image Storage:** Cloudinary
