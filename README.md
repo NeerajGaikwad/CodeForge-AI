@@ -77,32 +77,34 @@ CodeForge AI combines **AI-assisted development, real-time collaboration, projec
 ## 🏗️ System Architecture
 
 ```mermaid
-flowchart TB
-    User["👤 USER - Web Browser"]
-    Frontend["🎨 FRONTEND - React + Vite"]
-    Backend["⚙️ BACKEND - Node.js + Express"]
-
-    MongoDB[("🗄️ MongoDB - Users · Projects · Messages")]
-    Redis[("⚡ Redis - OTP Storage · Token Blacklisting")]
-    Gemini["🤖 Google Gemini AI - Responses · Code Gen"]
-    Resend["📧 Resend - OTP / Email Delivery"]
-
-    User -->|HTTP / WebSocket| Frontend
-    Frontend -->|REST API / Socket.IO| Backend
-
-    Backend --> MongoDB
-    Backend --> Redis
-    Backend --> Gemini
-    Backend --> Resend
-
-    subgraph FE["Frontend Modules"]
-        Chat["💬 Chat"]
-        Editor["📝 File Editor"]
-        Projects["📁 Projects"]
-        WebContainer["💻 WebContainer"]
-    end
-
-    Frontend --- FE
+    flowchart TB
+        User["👤 USER - Web Browser"]
+        Frontend["🎨 FRONTEND - React + Vite"]
+        Backend["⚙️ BACKEND - Node.js + Express"]
+    
+        MongoDB[("🗄️ MongoDB - Users · Projects · Messages")]
+        Redis[("⚡ Redis - OTP Storage · Token Blacklisting")]
+        Gemini["🤖 Google Gemini AI - Responses · Code Gen"]
+        Resend["📧 Resend - OTP / Email Delivery"]
+    
+        User -->|HTTP / WebSocket| Frontend
+        Frontend -->|REST API / Socket.IO| Backend
+    
+        Backend --> MongoDB
+        Backend --> Redis
+        Backend --> Gemini
+        Backend --> Resend
+    
+        subgraph FE["Frontend Modules"]
+            Chat["💬 Chat"]
+            Editor["📝 File Editor"]
+            Projects["📁 Projects"]
+            WebContainer["💻 WebContainer"]
+        end
+    
+        Frontend --- FE
+```
+---
 
 ## 🔄 Application Flow
 
