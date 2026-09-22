@@ -77,14 +77,14 @@ CodeForge AI combines **AI-assisted development, real-time collaboration, projec
 ## 🏗️ System Architecture
 
 flowchart TB
-    User["👤 USER<br/>Web Browser"]
-    Frontend["🎨 FRONTEND<br/>React + Vite"]
-    Backend["⚙️ BACKEND<br/>Node.js + Express"]
+    User["👤 USER - Web Browser"]
+    Frontend["🎨 FRONTEND - React + Vite"]
+    Backend["⚙️ BACKEND - Node.js + Express"]
 
-    MongoDB[("🗄️ MongoDB<br/>Users · Projects · Messages")]
-    Redis[("⚡ Redis<br/>OTP Storage · Token Blacklisting")]
-    Gemini["🤖 Google Gemini AI<br/>AI Responses · Code Generation"]
-    Resend["📧 Resend<br/>OTP / Email Delivery"]
+    MongoDB[("🗄️ MongoDB - Users · Projects · Messages")]
+    Redis[("⚡ Redis - OTP Storage · Token Blacklisting")]
+    Gemini["🤖 Google Gemini AI - Responses · Code Gen"]
+    Resend["📧 Resend - OTP / Email Delivery"]
 
     User -->|HTTP / WebSocket| Frontend
     Frontend -->|REST API / Socket.IO| Backend
@@ -102,8 +102,6 @@ flowchart TB
     end
 
     Frontend --- FE
-
----
 
 ## 🔄 Application Flow
 
